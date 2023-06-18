@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Cards from './components/CardDisplay';
 import RoundOver from './components/RoundOver';
+import './index.css';
 
 function App() {
   const [score, setScore] = useState(0);
@@ -9,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <div>App</div>
+      <div className="font-bold text-3xl">App</div>
       <Cards />
       <RoundOver />
     </div>

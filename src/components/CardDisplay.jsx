@@ -27,16 +27,17 @@ export default function CardDisplay() {
   }
 
   return (
-    <>
+    <div className="flex flex flex-wrap">
       {cardOrder.map((card) => (
         <Card
           key={card.id}
           name={card.name}
+          krName={card.krName}
           img={card.img}
           onClick={manageTurn}
         />
       ))}
-    </>
+    </div>
   );
 }
 

@@ -1,16 +1,16 @@
-import uniqid from 'uniqid'
+import uniqid from 'uniqid';
 
 export const cards = [
-  { id: uniqid(), name: 'Vivi', img: '',  },
-  { id: uniqid(), name: 'Yves', img: '' },
-  { id: uniqid(), name: 'JinSoul', img: '' },
-  { id: uniqid(), name: 'Haseul', img: '' },
-  { id: uniqid(), name: 'Kim Lip', img: '' },
-  { id: uniqid(), name: 'Chuu', img: '' },
-  { id: uniqid(), name: 'Heejin', img: '' },
-  { id: uniqid(), name: 'Hyunjin', img: ''},
-  { id: uniqid(), name: 'Gowon', img: '' },
-  { id: uniqid(), name: 'Choerry', img: '' },
-  { id: uniqid(), name: 'Olivia Hye', img: '' },
-  { id: uniqid(), name: 'Yeojin', img: '' },
+  { id: uniqid(), name: 'Vivi', krName: '비비', img: '/vivi.jpg' },
+  { id: uniqid(), name: 'Yves', krName: '이브', img: '/yves.jpg' },
+  { id: uniqid(), name: 'JinSoul', krName: '진솔', img: '/jinsoul.jpg' },
+  { id: uniqid(), name: 'Haseul', krName: '하슬', img: 'haseul.jpg' },
+  { id: uniqid(), name: 'Kim Lip', krName: '김립', img: 'kim-lip.jpg' },
+  { id: uniqid(), name: 'Chuu', krName: '', img: 'chuu.jpg' },
+  { id: uniqid(), name: 'Heejin', krName: '희진', img: 'heejin.jpg' },
+  { id: uniqid(), name: 'Hyunjin', krName: '현진', img: 'hyunjin.jpg' },
+  { id: uniqid(), name: 'Gowon', krName: '고원', img: 'gowon.jpg' },
+  { id: uniqid(), name: 'Choerry', krName: '최리', img: 'choerry.jpg' },
+  { id: uniqid(), name: 'Olivia Hye', krName: '올리비아혜', img: 'olivia-hye.jpg' },
+  { id: uniqid(), name: 'Yeojin', krName: '여진', img: 'yeojin.jpg' },
 ];
