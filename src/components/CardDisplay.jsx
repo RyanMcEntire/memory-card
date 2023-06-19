@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import { cards } from '../assets/cards';
 import Card from './Card';
 
-export default function CardDisplay() {
+export default function CardDisplay({ onCorrect }) {
   const [cardOrder, setCardOrder] = useState([]);
   const [picked, setPicked] = useState([]);
 
@@ -15,26 +16,30 @@ export default function CardDisplay() {
   };
 
   const pickCard = (e) => {
-    if (picked.includes(e.target.name)) {
-      setPicked([...(picked + e.target.name)]);
+    if (!picked.includes(e.target.name)) {
+      setPicked([...(picked, e.target.name)]);
+      return true;
+    } else {
+      return false;
     }
   };
 
-  function roundOver() {}
-
   function manageTurn(e) {
-    pickCard(e) ? reshuffleCards() : roundOver();
+    if (pickCard(e)) {
+      reshuffleCards();
+      onCorrect();
+    }
   }
 
   return (
-    <div className="flex flex flex-wrap">
+    <div className="flex flex-wrap gap-6 max-w-7xl">
       {cardOrder.map((card) => (
         <Card
           key={card.id}
           name={card.name}
           krName={card.krName}
           img={card.img}
-          onClick={manageTurn}
+          manageTurn={manageTurn}
         />
       ))}
     </div>
