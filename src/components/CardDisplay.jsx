@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { cards } from '../assets/cards';
 import Card from './Card';
 
-export default function CardDisplay({ onCorrect }) {
+export default function CardDisplay({ onCorrect, onEndRound }) {
   const [cardOrder, setCardOrder] = useState([]);
   const [picked, setPicked] = useState([]);
 
@@ -15,19 +15,22 @@ export default function CardDisplay({ onCorrect }) {
     setCardOrder(shuffleArray([...cards]));
   };
 
-  const pickCard = (e) => {
-    if (!picked.includes(e.target.name)) {
-      setPicked([...(picked, e.target.name)]);
-      return true;
-    } else {
+  const pickCard = (cardName) => {
+    if (picked.includes(cardName)) {
       return false;
+    } else {
+      setPicked([...picked, cardName]);
+      return true;
     }
   };
 
-  function manageTurn(e) {
-    if (pickCard(e)) {
-      reshuffleCards();
+  function manageTurn(cardName) {
+    if (pickCard(cardName)) {
       onCorrect();
+      reshuffleCards();
+    } else {
+      onEndRound();
+      setPicked([]);
     }
   }
 
@@ -39,7 +42,7 @@ export default function CardDisplay({ onCorrect }) {
           name={card.name}
           krName={card.krName}
           img={card.img}
-          manageTurn={manageTurn}
+          manageTurn={() => manageTurn(card.name)}
         />
       ))}
     </div>
