@@ -1,9 +1,9 @@
 import uniqid from 'uniqid';
 
 export const cards = [
-  { id: uniqid(), name: 'Vivi', krName: '비비', img: '/vivi.jpg' },
-  { id: uniqid(), name: 'Yves', krName: '이브', img: '/yves.jpg' },
-  { id: uniqid(), name: 'JinSoul', krName: '진솔', img: '/jinsoul.jpg' },
+  { id: uniqid(), name: 'Vivi', krName: '비비', img: 'vivi.jpg' },
+  { id: uniqid(), name: 'Yves', krName: '이브', img: 'yves.jpg' },
+  { id: uniqid(), name: 'JinSoul', krName: '진솔', img: 'jinsoul.jpg' },
   { id: uniqid(), name: 'Haseul', krName: '하슬', img: 'haseul.jpg' },
   { id: uniqid(), name: 'Kim Lip', krName: '김립', img: 'kim-lip.jpg' },
   { id: uniqid(), name: 'Chuu', krName: '츄', img: 'chuu.jpg' },
